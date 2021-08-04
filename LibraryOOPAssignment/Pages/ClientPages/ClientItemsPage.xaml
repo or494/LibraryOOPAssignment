@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="LibraryOOPAssignment.ClientItemsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LibraryOOPAssignment"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <ScrollViewer>
+        <StackPanel x:Name="GeneralStack" Background="Brown">
+            <StackPanel x:Name="BorrowedItemsStack" Background="LightBlue">
+                <TextBlock Text="Borrowed items" FontSize="50"/>
+                <GridView x:Name="BorrowedItemsContainer">
+            </GridView>
+            </StackPanel>
+            <StackPanel x:Name="PastBorrowedItemsStack" Background="LightCoral">
+                <TextBlock Text="Borrowed items in past" FontSize="50"/>
+                <GridView x:Name="PastBorrowedItemsContainer">
+                </GridView>
+            </StackPanel>
+            <TextBlock x:Name="DefaultMessage"  Text="There are no items at the moment" FontSize="50" Visibility="Collapsed"/>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

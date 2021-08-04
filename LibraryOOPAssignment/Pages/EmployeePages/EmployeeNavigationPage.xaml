@@ -1,0 +1,54 @@
+﻿<Page
+    x:Class="LibraryOOPAssignment.EmployeeNavigationPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LibraryOOPAssignment"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <NavigationView Background="{StaticResource CustomAcrylicLight}" SelectionChanged="NavigationView_SelectionChanged" Loaded="NavigationView_Loaded" IsSettingsVisible="False">
+        <NavigationView.Header>
+            <TextBlock x:Name="NavigationHeader" Text="Library" FontSize="50" Foreground="Black"/>
+        </NavigationView.Header>
+        <NavigationView.PaneHeader>
+            <Grid x:Name="paneheader">
+                <Ellipse Height="40" Width="40" HorizontalAlignment="Left" Margin="10,0,0,0">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="/Assets/NoProfilePicture.jpg" />
+                    </Ellipse.Fill>
+                </Ellipse>
+                <TextBlock x:Name="UserName" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+        </NavigationView.PaneHeader>
+        <NavigationView.AutoSuggestBox>
+            <AutoSuggestBox QueryIcon="Find" PlaceholderText="Enter name or ISBN" TextChanged="AutoSuggestBox_TextChanged" SuggestionChosen="AutoSuggestBox_SuggestionChosen" />
+        </NavigationView.AutoSuggestBox>
+        <NavigationView.MenuItems>
+            <NavigationViewItem x:Name="menu" Icon="Home">
+                <NavigationViewItem.Content>
+                    <TextBlock Text="Menu"/>
+                </NavigationViewItem.Content>
+            </NavigationViewItem>
+            <NavigationViewItem x:Name="addItems" Icon="Add">
+                <NavigationViewItem.Content>
+                    <TextBlock Text="Add items"/>
+                </NavigationViewItem.Content>
+            </NavigationViewItem>
+            <NavigationViewItem x:Name="library" Icon="Bookmarks">
+                <NavigationViewItem.Content>
+                    <Grid Width="250">
+                        <TextBlock Text="Library" Foreground="Black"/>
+                    </Grid>
+                </NavigationViewItem.Content>
+            </NavigationViewItem>
+            <NavigationViewItem x:Name="logOut" Icon="BlockContact">
+                <NavigationViewItem.Content>
+                    <TextBlock Text="Log out" Foreground="Black"/>
+                </NavigationViewItem.Content>
+            </NavigationViewItem>
+        </NavigationView.MenuItems>
+        <Frame x:Name="Page"/>
+    </NavigationView>
+</Page>

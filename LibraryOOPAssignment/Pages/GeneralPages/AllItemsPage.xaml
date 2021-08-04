@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="LibraryOOPAssignment.AllItemsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LibraryOOPAssignment"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <ScrollViewer>
+        <StackPanel x:Name="StackScreen" Background="#ccffcc">
+            <Grid Background="Gray" Height="50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Sort by:" Grid.Column="6" FontSize="25" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,5"/>
+                <ComboBox x:Name="SortType" Grid.Column="7" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="20" Margin="0,0,20,0" SelectionChanged="SortType_SelectionChanged"/>
+                <TextBlock Text="Categories:" Grid.Column="4" FontSize="25" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,5"/>
+                <ComboBox x:Name="category" Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="20" Margin="0,0,0,0" SelectionChanged="category_SelectionChanged" />
+            </Grid>
+            <Grid Background="LightBlue" Height="50">
+                <AutoSuggestBox Name="SearchTool" Margin="20,0,20,0" Height="35" VerticalAlignment="Center" QueryIcon="Find" TextChanged="SearchTool_TextChanged" SuggestionChosen="AutoSuggestBox_SuggestionChosen" />
+            </Grid>
+            <GridView x:Name="Container"/>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

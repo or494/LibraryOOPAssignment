@@ -1,0 +1,49 @@
+﻿<Page
+    x:Class="LibraryOOPAssignment.MenuPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LibraryOOPAssignment"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="Gray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ComboBox x:Name="SortComboBox" Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="15,0,15,0" FontSize="20" SelectionChanged="SortComboBox_SelectionChanged">
+            <ComboBoxItem Content="Name"/>
+            <ComboBoxItem Content="Price"/>
+            <ComboBoxItem Content="Newest"/>
+        </ComboBox>
+        <TextBlock Text="Sort by:" Grid.Column="4" HorizontalAlignment="Right" FontSize="30" Foreground="White"/>
+        <Pivot Background="LightBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6">
+            <PivotItem Header="All items">
+                <ScrollViewer x:Name="AllitemsViewer">
+                    <StackPanel x:Name="stackPanelAll">
+                    </StackPanel>
+                </ScrollViewer>
+            </PivotItem>
+            <PivotItem Header="Books">
+                <ScrollViewer x:Name="BooksViewer">
+                    <StackPanel x:Name="stackPanelBooks"/>
+                </ScrollViewer>
+            </PivotItem>
+            <PivotItem Header="Journals">
+                <ScrollViewer x:Name="JournalsViewer">
+                    <StackPanel x:Name="stackPanelJournals"/>
+                </ScrollViewer>
+            </PivotItem>
+        </Pivot>
+    </Grid>
+</Page>
